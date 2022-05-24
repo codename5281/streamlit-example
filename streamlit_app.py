@@ -7,6 +7,7 @@ import streamlit as st
 import numpy as np
 from pcse.db import NASAPowerWeatherDataProvider
 import plotly.express as px
+import datetime
 
 """
 # NN-ET0
@@ -27,10 +28,12 @@ if st.button('load data'):
     df["ET0"]=df["ET0"]*10 
     df["year"] = df.apply(lambda x: x["DAY"].year, axis=1)
     
+    df["julian_day"] = df.apply(lambda x: (x["DAY"] - datetime.date(x["year"],1,1)).days, axis=1)
+    
     df_2 = df[df["year"]>2012]
     df_2
 
-    fig = px.line(df_2, x="DAY", y="ET0", color='year')
+    fig = px.line(df_2, x="julian_day", y="ET0", color='year')
     st.plotly_chart(fig, use_container_width=True)
 
 else:
