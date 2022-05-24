@@ -6,6 +6,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 from pcse.db import NASAPowerWeatherDataProvider
+import plotly.express as px
 
 """
 # NN-ET0
@@ -28,6 +29,9 @@ if st.button('load data'):
     
     df_2 = df[df["year"]==2021]
     df_2
+
+    fig = px.line(df_2, x="DAY", y="ET0", color='year')
+    st.plotly_chart(fig, use_container_width=True)
 
 else:
     pass
