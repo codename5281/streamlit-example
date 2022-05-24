@@ -1,4 +1,5 @@
 from collections import namedtuple
+from multiprocessing.sharedctypes import Value
 import altair as alt
 import math
 import pandas as pd
@@ -10,8 +11,8 @@ from pcse.db import NASAPowerWeatherDataProvider
 # NN-ET0
 """
 
-latitude = st.number_input("latitude")
-longitude = st.number_input("longitude")
+latitude = st.number_input("latitude", value=43.610769)
+longitude = st.number_input("longitude", value=3.876716)
 
 
 st.write("latitude: %s, longitude: %s" % (np.round(latitude,2),np.round(longitude,2)))
