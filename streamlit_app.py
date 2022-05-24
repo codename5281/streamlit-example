@@ -27,7 +27,7 @@ if st.button('load data'):
     df["ET0"]=df["ET0"]*10 
     df["year"] = df.apply(lambda x: x["DAY"].year, axis=1)
     
-    df_2 = df[df["year"]==2021]
+    df_2 = df[df["year"]>2012]
     df_2
 
     fig = px.line(df_2, x="DAY", y="ET0", color='year')
