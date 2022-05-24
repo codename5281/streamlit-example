@@ -25,12 +25,12 @@ st.write("latitude: %s, longitude: %s" % (np.round(latitude,2),np.round(longitud
 
 if st.button('load data'):
     st.write('Loading data')
-        weatherdata = NASAPowerWeatherDataProvider(longitude,latitude,force_update=True) 
-        
-        df = pd.DataFrame(weatherdata.export())
-        # converting PCSE units : cm to mm
-        df["ET0"]=df["ET0"]*10 
-        df
+    weatherdata = NASAPowerWeatherDataProvider(longitude,latitude,force_update=True) 
+    
+    df = pd.DataFrame(weatherdata.export())
+    # converting PCSE units : cm to mm
+    df["ET0"]=df["ET0"]*10 
+    df
 
 
  else:
