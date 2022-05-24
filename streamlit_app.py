@@ -23,7 +23,7 @@ if st.button('load data'):
     df = pd.DataFrame(weatherdata.export())
     # converting PCSE units : cm to mm
     df["ET0"]=df["ET0"]*10 
-    df["year"] = df["DAY"].year()
+    df["year"] = df.apply(lambda x: x["DAY"].year(), axis=1)
     df
 
 
