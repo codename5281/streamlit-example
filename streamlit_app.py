@@ -33,5 +33,5 @@ if st.button('load data'):
     df
 
 
- else:
+else:
     pass
