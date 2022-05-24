@@ -17,7 +17,7 @@ import datetime
 latitude = st.number_input("latitude", value=43.610769)
 longitude = st.number_input("longitude", value=3.876716)
 
-st.map(pd.DataFrame({"lat":latitude,"lon":longitude}))
+st.map(pd.DataFrame({"lat":latitude,"lon":longitude}, index=[0]))
 
 
 st.write("latitude: %s, longitude: %s" % (np.round(latitude,2),np.round(longitude,2)))
