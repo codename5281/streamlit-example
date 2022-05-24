@@ -14,10 +14,10 @@ import datetime
 ## récupération des données
 """
 
-latitude = st.number_input("latitude", value=43.610769, step=0.1)
-longitude = st.number_input("longitude", value=3.876716, step=0.1)
+latitude = st.number_input("latitude", value=43.610769, step=0.5)
+longitude = st.number_input("longitude", value=3.876716, step=0.5)
 
-st.map(pd.DataFrame({"lat":latitude,"lon":longitude}, index=[0]), zoom=8)
+st.map(pd.DataFrame({"lat":latitude,"lon":longitude}, index=[0]), zoom=6)
 
 
 st.write("latitude: %s, longitude: %s" % (np.round(latitude,2),np.round(longitude,2)))
