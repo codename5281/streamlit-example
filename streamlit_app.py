@@ -19,4 +19,4 @@ latitude = st.number_input("latitude")
 longitude = st.number_input("longitude")
 
 
-st.write("latitude: %s, longitude: %s".format(latitude,longitude))
+st.write("latitude: %s, longitude: %s" % (latitude,longitude))
